@@ -1,0 +1,26 @@
+# Config Interface
+[[ifaces]]
+name = "eth1"
+controller_name = "br_lan"
+
+[[ifaces]]
+name = "eth2"
+controller_name = "br_lan"
+
+[[ifaces]]
+name = "br_lan"
+create_dev_type = "bridge"
+zone_type = "lan"
+
+[[ifaces]]
+name = "lan"
+controller_name = "br_lan"
+
+[[dhcpv4_services]]
+iface_name = "br_lan"
+enable = true
+
+[dhcpv4_services.config]
+server_ip_addr = "10.4.1.10"
+ip_range_start = "10.4.1.100"
+network_mask = 24

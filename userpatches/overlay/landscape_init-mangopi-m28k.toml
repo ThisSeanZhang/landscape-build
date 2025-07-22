@@ -9,7 +9,7 @@ enable = true
 
 [ipconfigs.ip_model]
 t = "dhcpclient"
-default_router=true
+default_router = true
 
 [[ifaces]]
 name = "br_lan"
@@ -32,13 +32,13 @@ network_mask = 24
 [[ifaces]]
 name = "wlan0"
 controller_name = "br_lan"
-enable_in_boot=true
-wifi_mode="ap"
+enable_in_boot = true
+wifi_mode = "ap"
 
 [[wifi_configs]]
-iface_name="wlan0"
-enable=true
-config="""
+iface_name = "wlan0"
+enable = true
+config = """
 # 基本接口配置
 interface=wlan0
 driver=nl80211

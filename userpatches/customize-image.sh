@@ -94,8 +94,6 @@ EOF
 	cat <<EOF > /etc/systemd/system/landscape-router.service
 [Unit]
 Description=Landscape Router
-After=docker.service
-Requires=docker.service
 
 [Service]
 ExecStart=/root/landscape-webserver
