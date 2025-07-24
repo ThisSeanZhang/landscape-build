@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# 软链接当前目录
-if [ ! -L "armbian/userpatches" ] || [ "$(readlink armbian/userpatches)" != "../userpatches" ]; then
-  rm -rf armbian/userpatches
-  ln -s ../userpatches armbian/userpatches
-fi
+rm -rf armbian/userpatches/overlay
+mkdir -p armbian/userpatches/overlay
+cp -rf  ./sharefiles/* armbian/userpatches/overlay
 
-if [ ! -L "armbian/output" ] || [ "$(readlink armbian/output)" != "../output" ]; then
-  rm -rf armbian/output
-  ln -s ../output armbian/output
-fi
+rm -rf armbian/userpatches/customize-image.sh
+cp -f ./customize-image.sh armbian/userpatches/customize-image.sh
