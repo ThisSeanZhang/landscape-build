@@ -3,6 +3,6 @@ userpatches/*
 !userpatches/overlay
 output/*
 output/*
-userpatches/overlay/landscape-webserver-aarch64
-userpatches/overlay/static.zip
-userpatches/overlay/landscape-webserver-x86_64
+sharefiles/landscape-webserver-aarch64
+sharefiles/static.zip
+sharefiles/landscape-webserver-x86_64
