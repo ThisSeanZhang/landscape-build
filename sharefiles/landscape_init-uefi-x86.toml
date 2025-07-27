@@ -1,26 +1,36 @@
 # Config Interface
 [[ifaces]]
-name = "eth1"
-controller_name = "br_lan"
+name = "eth0"
+zone_type = "wan"
+enable_in_boot = true
+
+[[ipconfigs]]
+iface_name = "eth0"
+enable = true
+
+[ipconfigs.ip_model]
+t = "static"
+default_router_ip = "10.1.1.10"
+default_router = true
+ipv4 = "10.1.1.15"
+ipv4_mask = 24
 
 [[ifaces]]
-name = "eth2"
+name = "eth1"
+enable_in_boot = true
 controller_name = "br_lan"
 
 [[ifaces]]
 name = "br_lan"
 create_dev_type = "bridge"
+enable_in_boot = true
 zone_type = "lan"
-
-[[ifaces]]
-name = "lan"
-controller_name = "br_lan"
 
 [[dhcpv4_services]]
 iface_name = "br_lan"
 enable = true
 
 [dhcpv4_services.config]
-server_ip_addr = "10.4.1.10"
-ip_range_start = "10.4.1.100"
+server_ip_addr = "192.168.6.1"
+ip_range_start = "192.168.6.100"
 network_mask = 24
